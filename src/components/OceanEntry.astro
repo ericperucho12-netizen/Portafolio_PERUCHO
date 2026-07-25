@@ -1,0 +1,457 @@
+---
+import yoSentado from "../assets/YoSentado.png";
+---
+
+<!-- ═══ VIDEO ENTRY — Splash Screen Overlay ═══ -->
+<div id="ocean-entry" class="fixed inset-0 z-[9999] overflow-hidden bg-black">
+  <!-- ═══ BACKGROUND VIDEO ═══ -->
+  <video
+    id="bg-video"
+    autoplay
+    loop
+    playsinline
+    class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-90"
+  >
+    <source src="/VideoMar.mp4" type="video/mp4" />
+  </video>
+
+  <!-- ═══ SPLASH SOUND EFFECT ═══ -->
+  <audio id="splash-sound" src="/audio/splash.mp3" preload="auto"></audio>
+
+  <!-- ═══ AUDIO TOGGLE ═══ -->
+  <button
+    id="audio-toggle"
+    class="entry-audio-btn absolute top-6 right-6 sm:top-8 sm:right-8 z-[40] w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110"
+    aria-label="Activar o desactivar sonido"
+  >
+    <!-- Sound On Icon (Default) -->
+    <svg
+      id="sound-on-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="rgba(255,255,255,0.8)"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class=""
+    >
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+    </svg>
+    <!-- Sound Off Icon -->
+    <svg
+      id="sound-off-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="rgba(255,255,255,0.8)"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="hidden"
+    >
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <line x1="23" y1="9" x2="17" y2="15"></line>
+      <line x1="17" y1="9" x2="23" y2="15"></line>
+    </svg>
+  </button>
+
+  <!-- ═══ PERSON SITTING ON THE SAND ═══ -->
+  <div
+    class="absolute bottom-[2%] left-[2%] sm:left-[4%] md:left-[6%] lg:left-[8%] z-[15]"
+  >
+    <img
+      src={yoSentado.src}
+      alt="Eric sentado contemplando el océano"
+      class="w-[140px] sm:w-[180px] md:w-[260px] lg:w-[320px] h-auto select-none"
+      style="filter: drop-shadow(3px 6px 14px rgba(0,0,0,0.7));"
+      draggable="false"
+    />
+  </div>
+
+  <!-- ═══ UIVERSE CARD (Top Right) ═══ -->
+  <div
+    class="absolute top-[20%] right-[10%] md:right-[15%] lg:right-[10%] z-[40]"
+  >
+    <div class="card">
+      <div class="background"></div>
+
+      <!-- "ENTRAR" (Replacing UI Logo) -->
+      <div
+        id="enter-btn"
+        class="logo cursor-pointer flex items-center justify-center font-bold text-white text-xl tracking-wider uppercase drop-shadow-md hover:scale-110 transition-transform"
+      >
+        Entrar
+      </div>
+
+      <!-- GitHub -->
+      <a
+        href="https://github.com/ericperucho12-netizen"
+        target="_blank"
+        class="box box1"
+        rel="noopener noreferrer"
+      >
+        <span class="icon">
+          <svg viewBox="0 0 24 24" class="svg">
+            <path
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+            ></path>
+          </svg>
+        </span>
+      </a>
+
+      <!-- LinkedIn -->
+      <a
+        href="https://www.linkedin.com/in/eric-perucho-128706133"
+        target="_blank"
+        class="box box2"
+        rel="noopener noreferrer"
+      >
+        <span class="icon">
+          <svg viewBox="0 0 24 24" class="svg">
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+            ></path>
+          </svg>
+        </span>
+      </a>
+
+      <!-- TikTok -->
+      <a
+        href="https://www.tiktok.com/@erickperucho7"
+        target="_blank"
+        class="box box3"
+        rel="noopener noreferrer"
+      >
+        <span class="icon">
+          <svg viewBox="0 0 448 512" class="svg">
+            <path
+              d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"
+            ></path>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SCOPED STYLES ═══ -->
+<style>
+  .entry-glass {
+    background: rgba(10, 15, 30, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .entry-dive-btn {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  .entry-dive-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+  }
+
+  .entry-audio-btn {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .entry-audio-btn:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  /* ─── Dive-away transition ─── */
+  #ocean-entry.diving {
+    animation: diveAway 1.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    pointer-events: none;
+  }
+  #ocean-entry.diving .entry-glass,
+  #ocean-entry.diving .card {
+    animation: glassDissolve 0.8s ease-out forwards;
+  }
+  @keyframes diveAway {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100%);
+      opacity: 1;
+    }
+  }
+  @keyframes glassDissolve {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.92);
+    }
+  }
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ─── UIVERSE CARD CSS ─── */
+  .card {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 7px 29px 0px;
+    transition: all 1s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .background {
+    position: absolute;
+    inset: 0;
+    /* Updated gradient to match deep sea theme better */
+    background: radial-gradient(
+      circle at 100% 107%,
+      #00ffff 0%,
+      #0077b6 30%,
+      #023e8a 60%,
+      #03050c 100%
+    );
+    opacity: 0.3;
+  }
+
+  .logo {
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+    transition: all 0.6s ease-in-out;
+  }
+
+  .icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+  }
+
+  .icon .svg {
+    fill: rgba(255, 255, 255, 0.797);
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .box {
+    position: absolute;
+    padding: 10px;
+    text-align: right;
+    background: rgba(255, 255, 255, 0.1);
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10% 13% 42% 0%/10% 12% 75% 0%;
+    box-shadow: rgba(0, 0, 0, 0.5) -7px 7px 29px 0px;
+    transform-origin: bottom left;
+    transition: all 1s ease-in-out;
+    backdrop-filter: blur(5px);
+  }
+
+  .box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .box:hover .svg {
+    fill: white;
+  }
+
+  .box1 {
+    width: 70%;
+    height: 70%;
+    bottom: -70%;
+    left: -70%;
+  }
+
+  .box1::before {
+    background: radial-gradient(
+      circle at 30% 107%,
+      #333 0%,
+      #000 90%
+    ); /* GitHub colors */
+  }
+
+  .box1:hover::before {
+    opacity: 1;
+  }
+
+  .box1:hover .icon .svg {
+    filter: drop-shadow(0 0 5px white);
+  }
+
+  .box2 {
+    width: 50%;
+    height: 50%;
+    bottom: -50%;
+    left: -50%;
+    transition-delay: 0.2s;
+  }
+
+  .box2::before {
+    background: radial-gradient(
+      circle at 30% 107%,
+      #0077b5 0%,
+      #004d7a 90%
+    ); /* LinkedIn colors */
+  }
+
+  .box2:hover::before {
+    opacity: 1;
+  }
+
+  .box2:hover .icon .svg {
+    filter: drop-shadow(0 0 5px white);
+  }
+
+  .box3 {
+    width: 30%;
+    height: 30%;
+    bottom: -30%;
+    left: -30%;
+    transition-delay: 0.4s;
+  }
+
+  .box3::before {
+    background: radial-gradient(
+      circle at 30% 107%,
+      #ff0050 0%,
+      #00f2fe 90%
+    ); /* TikTok colors */
+  }
+
+  .box3:hover::before {
+    opacity: 1;
+  }
+
+  .box3:hover .icon .svg {
+    filter: drop-shadow(0 0 5px white);
+  }
+
+  .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+  }
+
+  .card:hover .box {
+    bottom: -1px;
+    left: -1px;
+  }
+
+  .card:hover .logo {
+    transform: translate(0, 0);
+    bottom: 20px;
+    right: 20px;
+  }
+</style>
+
+<script>
+  // ─── DIVE BUTTON & AUDIO TOGGLE SCRIPT ───
+  const oceanEntry = document.getElementById("ocean-entry");
+  const diveBtn = document.getElementById("enter-btn");
+  const video = document.getElementById("bg-video") as HTMLVideoElement;
+  const audioToggle = document.getElementById("audio-toggle");
+  const soundOnIcon = document.getElementById("sound-on-icon");
+  const soundOffIcon = document.getElementById("sound-off-icon");
+
+  if (oceanEntry) {
+    document.body.style.overflow = "hidden";
+  }
+
+  // Try to play video immediately
+  const playVideo = () => {
+    if (video && video.paused) {
+      video.play().catch((err) => {
+        console.warn(
+          "Navegador bloqueó el autoplay con sonido. Se requiere interacción del usuario.",
+          err,
+        );
+      });
+    }
+  };
+
+  // Call immediately
+  playVideo();
+
+  // If blocked by browser, clicking anywhere on the screen will try to start the video
+  document.addEventListener("click", playVideo, { once: true });
+
+  // Audio Toggle Logic
+  if (audioToggle && video) {
+    audioToggle.addEventListener("click", (e) => {
+      e.stopPropagation(); // prevent triggering the document click again
+      video.muted = !video.muted;
+      if (video.muted) {
+        soundOnIcon?.classList.add("hidden");
+        soundOffIcon?.classList.remove("hidden");
+      } else {
+        soundOnIcon?.classList.remove("hidden");
+        soundOffIcon?.classList.add("hidden");
+        playVideo(); // Ensure playing if paused
+      }
+    });
+  }
+
+  const splashSound = document.getElementById("splash-sound") as HTMLAudioElement;
+
+  if (diveBtn && oceanEntry) {
+    diveBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      // Ensure video plays (in case it was blocked and this is the first click)
+      playVideo();
+
+      // Play splash sound
+      if (splashSound) {
+        splashSound.volume = 1.0;
+        splashSound.play().catch(err => console.log("Splash audio blocked:", err));
+      }
+
+      // Trigger dive animation
+      oceanEntry.classList.add("diving");
+
+      // Dispatch event for Hero.astro to start the falling animation
+      document.dispatchEvent(new CustomEvent('start-falling-hero'));
+
+      // After animation completes, remove splash and unlock scroll
+      oceanEntry.addEventListener("animationend", (evt) => {
+        if (evt.animationName === "diveAway") {
+          oceanEntry.remove();
+          document.body.style.overflow = "";
+        }
+      });
+    });
+  }
+</script>

@@ -1,0 +1,299 @@
+---
+import yoCallendo from "../assets/Yo_callendo.png";
+import htmlIcon from "../assets/HTMl.webp";
+import javaIcon from "../assets/Java.png";
+import jsIcon from "../assets/JavaScript.png";
+import cssIcon from "../assets/CSS.webp";
+import cppIcon from "../assets/C++.png";
+import pythonIcon from "../assets/Python-logo-notext.svg.png";
+import postgresIcon from "../assets/Postgresql_elephant.svg";
+import nodeIcon from "../assets/nodejs-200.png";
+import mysqlIcon from "../assets/My SQL.png";
+---
+
+<section
+  id="about"
+  class="w-[min(95%,160rem)] mx-auto mt-16 px-4 md:px-8 py-16 relative min-h-[40vh] z-10"
+>
+  <!-- Tarjeta About Me -->
+  <div class="bg-transparent mb-20">
+    <div class="text-center mb-20 relative w-full">
+      <h2
+        class="text-[4rem] text-white font-bold inline-block relative pb-6 m-0 capitalize drop-shadow-[0_3px_6px_rgba(0,29,61,0.5)] after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-[80px] after:h-[5px] after:bg-gradient-to-r after:from-[#00ffff] after:via-[#0077b6] after:to-[#00ffff] after:bg-[length:200%_auto] after:rounded-full after:shadow-[0_0_10px_rgba(0,255,255,0.5)] after:animate-[flowLine_3s_linear_infinite]"
+        data-key="about.title"
+      >
+        About
+      </h2>
+    </div>
+
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <div class="flex justify-center lg:flex-[1.2] w-full max-w-[80rem]">
+        <img
+          src={yoCallendo.src}
+          alt="Eric Cayendo"
+          class="w-full lg:min-w-[60rem] lg:scale-110 h-auto object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:scale-125 hover:-translate-y-4 animate-[float_6s_ease-in-out_infinite]"
+        />
+      </div>
+      <div class="max-w-[100rem] lg:flex-1">
+        <p
+          class="text-[1.8rem] text-gray-300 mb-8 text-justify font-body leading-relaxed z-10 relative drop-shadow-md"
+          data-key="about.p1"
+        >
+          ¡Hola! Soy Eric Perucho. Mi camino en el código empezó con una meta
+          clara: entender cómo funcionan las cosas desde adentro. Soy
+          Desarrollador Full Stack con base en análisis de sistemas, pero más
+          que eso, soy un apasionado por resolver problemas y nunca dejar de
+          aprender.
+        </p>
+        <p
+          class="text-[1.8rem] text-gray-300 mb-8 text-justify font-body leading-relaxed z-10 relative drop-shadow-md"
+          data-key="about.p2"
+        >
+          Hace poco decidí llevar mi aprendizaje al siguiente nivel creando
+          Perucho Dev, un espacio donde comparto mi proceso dominando la lógica
+          de programación y lenguajes como Java y Python. No solo busco
+          construir software robusto; mi objetivo es diseñar soluciones que
+          realmente le hagan la vida más fácil al usuario.
+        </p>
+        <p
+          class="text-[1.8rem] text-gray-300 mb-8 text-justify font-body leading-relaxed z-10 relative drop-shadow-md"
+          data-key="about.p3"
+        >
+          Actualmente estoy en proceso de titulación y siempre busco entornos
+          donde la precisión y el trabajo en equipo sean la clave. Si algo me
+          define, es mi curiosidad insaciable: si no lo sé, lo investigo; si lo
+          aprendo, te lo explico.
+        </p>
+
+        <blockquote
+          class="mt-12 border-l-4 border-[#00ffff] pl-8 italic bg-white/5 p-4 rounded-r-lg"
+        >
+          <p
+            class="font-serif text-[2rem] text-white mb-4 drop-shadow-md"
+            data-key="about.quote"
+          >
+            "El mar, una vez que lanza su hechizo, atrapa a uno en su red de
+            maravillas para siempre."
+          </p>
+          <footer
+            class="text-right font-bold text-gray-400 text-[1.6rem]"
+            data-key="about.author"
+          >
+            - Jacques Yves Cousteau
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección Skills (Logo Loop) -->
+  <div class="bg-transparent mb-20 w-full overflow-hidden relative">
+    <div class="text-center mb-16 relative w-full flex flex-col items-center">
+      <h2
+        class="text-[4rem] text-white font-bold inline-block relative pb-6 m-0 capitalize drop-shadow-[0_3px_6px_rgba(0,29,61,0.5)] after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-[80px] after:h-[5px] after:bg-gradient-to-r after:from-marine-deep after:via-marine-teal after:to-marine-deep after:bg-[length:200%_auto] after:rounded-full after:shadow-[0_0_10px_rgba(0,206,209,0.5)] after:animate-[flowLine_3s_linear_infinite]"
+        data-key="skills.title"
+      >
+        Skills
+      </h2>
+    </div>
+
+    <div
+      class="relative flex w-full overflow-hidden group mask-image-fade py-8"
+    >
+      <!-- First Marquee Track -->
+      <div
+        class="flex animate-marquee whitespace-nowrap group-hover:[animation-play-state:paused]"
+      >
+        {
+          [
+            {
+              name: "Astro",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg",
+            },
+            {
+              name: "Java",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+            },
+            {
+              name: "Python",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+            },
+            {
+              name: "MySQL",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+            },
+            {
+              name: "Git",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+            },
+            {
+              name: "GitHub",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+            },
+            {
+              name: "Node.js",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+            },
+            {
+              name: "JavaScript",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+            },
+            {
+              name: "HTML",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+            },
+            {
+              name: "CSS",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+            },
+            {
+              name: "TypeScript",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+            },
+            {
+              name: "Tailwind",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+            },
+            {
+              name: "PostgreSQL",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+            },
+          ].map((skill) => (
+            <div class="flex flex-col items-center justify-center mx-8 sm:mx-12 min-w-[120px] transition-transform duration-300 hover:scale-110">
+              <div class="w-[70px] h-[70px] mb-4 bg-white/10 backdrop-blur-sm p-3 rounded-2xl shadow-lg border border-white/20 flex items-center justify-center">
+                <img
+                  src={skill.img}
+                  alt={skill.name}
+                  class="w-full h-full object-contain drop-shadow-md"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-original.svg';"
+                />
+              </div>
+              <span class="text-white font-bold text-[1.4rem] tracking-wide drop-shadow-md">
+                {skill.name}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Second Marquee Track (Duplicate for seamless loop) -->
+      <div
+        class="flex animate-marquee2 whitespace-nowrap absolute top-8 group-hover:[animation-play-state:paused]"
+      >
+        {
+          [
+            {
+              name: "Astro",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg",
+            },
+            {
+              name: "Java",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+            },
+            {
+              name: "Python",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+            },
+            {
+              name: "MySQL",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+            },
+            {
+              name: "Git",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+            },
+            {
+              name: "GitHub",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+            },
+            {
+              name: "Node.js",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+            },
+            {
+              name: "JavaScript",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+            },
+            {
+              name: "HTML",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+            },
+            {
+              name: "CSS",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+            },
+            {
+              name: "TypeScript",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+            },
+            {
+              name: "Tailwind",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+            },
+            {
+              name: "PostgreSQL",
+              img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+            },
+          ].map((skill) => (
+            <div class="flex flex-col items-center justify-center mx-8 sm:mx-12 min-w-[120px] transition-transform duration-300 hover:scale-110">
+              <div class="w-[70px] h-[70px] mb-4 bg-white/10 backdrop-blur-sm p-3 rounded-2xl shadow-lg border border-white/20 flex items-center justify-center">
+                <img
+                  src={skill.img}
+                  alt={skill.name}
+                  class="w-full h-full object-contain drop-shadow-md"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-original.svg';"
+                />
+              </div>
+              <span class="text-white font-bold text-[1.4rem] tracking-wide drop-shadow-md">
+                {skill.name}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .mask-image-fade {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+  .animate-marquee {
+    animation: marquee 35s linear infinite;
+  }
+  .animate-marquee2 {
+    animation: marquee2 35s linear infinite;
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes marquee2 {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+</style>

@@ -1,0 +1,46 @@
+---
+import '../styles/global.css';
+import OceanEntry from '../components/OceanEntry.astro';
+import LightRays from '../components/ui/LightRays.jsx';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Eric Perucho Solis — Desarrollador Full Stack">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Portafolio | Eric Perucho</title>
+</head>
+<body class="relative min-h-screen">
+
+    <!-- Splash Screen — Se elimina tras hacer clic en "Sumergirse" -->
+    <OceanEntry />
+
+    <!-- Efecto de rayos de luz submarinos globales -->
+    <div class="fixed inset-0 pointer-events-none z-0 opacity-40 mix-blend-screen h-[100vh]">
+      <LightRays
+        client:load
+        raysOrigin="top-center"
+        raysColor="#ffffff"
+        raysSpeed={1.5}
+        lightSpread={1.2}
+        rayLength={1.8}
+        followMouse={true}
+        mouseInfluence={0.15}
+        noiseAmount={0.05}
+        distortion={0.1}
+        pulsating={true}
+      />
+    </div>
+
+    <!-- Contenido del sitio (visible tras el splash) -->
+    <div class="relative z-10">
+      <slot />
+    </div>
+
+    <script src="/js/script.js" is:inline></script>
+</body>
+</html>
