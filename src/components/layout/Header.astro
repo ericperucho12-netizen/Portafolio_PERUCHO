@@ -1,0 +1,59 @@
+---
+import GooeyNav from "../ui/GooeyNav.jsx";
+
+const navItems = [
+  { label: "Home", href: "#home", dataKey: "nav.home" },
+  { label: "About", href: "#about", dataKey: "nav.about" },
+  { label: "Portafolio", href: "#portafolio", dataKey: "nav.portfolio" },
+  { label: "Blog", href: "#blog", dataKey: "nav.blog" },
+  { label: "Contact", href: "#contact", dataKey: "nav.contact" },
+];
+---
+
+<header
+  class="fixed top-0 left-0 w-full z-[1000] bg-[#03050c]/50 backdrop-blur-md py-8 shadow-sm border-b border-white/5"
+>
+  <div
+    class="w-[min(90%,120rem)] mx-auto flex justify-between items-center flex-wrap"
+  >
+    <!-- Lado Izquierdo -->
+    <a href="/" class="logo">
+      <h1
+        class="font-bold bg-gradient-to-r from-[#e2e8f0] to-[#f8fafc] bg-clip-text text-transparent text-[4rem] m-0 font-heading leading-tight drop-shadow-md"
+      >
+        Perucho Developer
+      </h1>
+    </a>
+
+    <!-- Menú Hamburguesa (visible solo en móvil) -->
+    <div class="block md:hidden cursor-pointer text-white">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </div>
+
+    <!-- Lado Derecho -->
+    <div
+      class="hidden md:flex flex-col md:flex-row w-full md:w-auto items-center gap-4 md:gap-8 mt-4 md:mt-0 pt-4 md:pt-0 border-t md:border-none border-white/10"
+    >
+      <GooeyNav client:load items={navItems} />
+      <button
+        id="lang-toggle"
+        class="bg-transparent border-2 border-white/30 text-white/80 px-4 py-2 font-bold cursor-pointer rounded-full transition-all hover:bg-white hover:text-[#03050c] text-sm"
+        >ES | EN</button
+      >
+    </div>
+  </div>
+</header>

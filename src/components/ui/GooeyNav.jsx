@@ -14,8 +14,33 @@ const GooeyNav = ({
   const containerRef = useRef(null);
   const navRef = useRef(null);
   const filterRef = useRef(null);
-  const textRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(initialActiveIndex);
+  const [labels, setLabels] = useState(() => items.map(item => {
+    if (typeof window !== 'undefined' && window.siteTranslations && window.currentSiteLang) {
+      return window.siteTranslations[window.currentSiteLang][item.dataKey] || item.label;
+    }
+    return item.label;
+  }));
+
+  useEffect(() => {
+    const handleLanguageChange = (e) => {
+      const trans = e.detail.translations;
+      setLabels(items.map(item => trans[item.dataKey] || item.label));
+      
+      // Update textRef to immediately reflect the new language in the gooey effect
+      setTimeout(() => {
+        if (navRef.current && textRef.current) {
+          const activeLi = navRef.current.querySelectorAll('li')[activeIndex];
+          if (activeLi) {
+            textRef.current.innerText = activeLi.innerText;
+          }
+        }
+      }, 50);
+    };
+    
+    window.addEventListener('languageChanged', handleLanguageChange);
+    return () => window.removeEventListener('languageChanged', handleLanguageChange);
+  }, [items, activeIndex]);
 
   const noise = (n = 1) => n / 2 - Math.random() * n;
 
@@ -78,7 +103,7 @@ const GooeyNav = ({
   };
 
   const updateEffectPosition = element => {
-    if (!containerRef.current || !filterRef.current || !textRef.current) return;
+    if (!containerRef.current || !filterRef.current) return;
     const containerRect = containerRef.current.getBoundingClientRect();
     const pos = element.getBoundingClientRect();
 
@@ -89,8 +114,6 @@ const GooeyNav = ({
       height: `${pos.height}px`
     };
     Object.assign(filterRef.current.style, styles);
-    Object.assign(textRef.current.style, styles);
-    textRef.current.innerText = element.innerText;
   };
 
   const handleClick = (e, index) => {
@@ -103,13 +126,6 @@ const GooeyNav = ({
     if (filterRef.current) {
       const particles = filterRef.current.querySelectorAll('.particle');
       particles.forEach(p => filterRef.current.removeChild(p));
-    }
-
-    if (textRef.current) {
-      textRef.current.classList.remove('active');
-
-      void textRef.current.offsetWidth;
-      textRef.current.classList.add('active');
     }
 
     if (filterRef.current) {
@@ -132,7 +148,6 @@ const GooeyNav = ({
     const activeLi = navRef.current.querySelectorAll('li')[activeIndex];
     if (activeLi) {
       updateEffectPosition(activeLi);
-      textRef.current?.classList.add('active');
     }
 
     const resizeObserver = new ResizeObserver(() => {
@@ -146,6 +161,32 @@ const GooeyNav = ({
     return () => resizeObserver.disconnect();
   }, [activeIndex]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = items.findIndex(item => item.href === '#' + entry.target.id);
+          if (index !== -1) {
+            setActiveIndex(prev => (prev !== index ? index : prev));
+          }
+        }
+      });
+    }, { 
+      rootMargin: "-40% 0px -40% 0px",
+      threshold: 0
+    });
+
+    items.forEach(item => {
+      if (item.href && item.href.startsWith('#')) {
+        const id = item.href.substring(1);
+        const section = document.getElementById(id);
+        if (section) observer.observe(section);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, [items]);
+
   return (
     <div className="gooey-nav-container" ref={containerRef}>
       <nav>
@@ -158,14 +199,13 @@ const GooeyNav = ({
                 onKeyDown={e => handleKeyDown(e, index)}
                 data-key={item.dataKey}
               >
-                {item.label}
+                {labels[index]}
               </a>
             </li>
           ))}
         </ul>
       </nav>
       <span className="effect filter" ref={filterRef} />
-      <span className="effect text" ref={textRef} />
     </div>
   );
 };

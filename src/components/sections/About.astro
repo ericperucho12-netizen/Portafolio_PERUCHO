@@ -1,0 +1,405 @@
+---
+import InfiniteMenu from "../ui/InfiniteMenu.jsx";
+import yoCallendo from "../../assets/Yo_callendo.png";
+import htmlIcon from "../../assets/HTMl.webp";
+import javaIcon from "../../assets/Java.png";
+import jsIcon from "../../assets/JavaScript.png";
+import cssIcon from "../../assets/CSS.webp";
+import cppIcon from "../../assets/C++.png";
+import pythonIcon from "../../assets/Python-logo-notext.svg.png";
+import postgresIcon from "../../assets/Postgresql_elephant.svg";
+import nodeIcon from "../../assets/nodejs-200.png";
+import mysqlIcon from "../../assets/My SQL.png";
+
+// Imágenes de galería
+import imgAmigos from "../../assets/Amigos_menu.jpeg";
+import imgDog from "../../assets/Dog_menu.jpeg";
+import imgElegante from "../../assets/Elegante_menu.jpeg";
+import imgElegant from "../../assets/Elegant_menu.jpeg";
+import imgFriendst from "../../assets/Friendst_menu.jpeg";
+import imgJapon from "../../assets/Japon_menu.jpeg";
+import imgMoure from "../../assets/Moure_menu.jpeg";
+import imgParacaidas from "../../assets/Paracaidas_menu.jpeg";
+import imgPoli2 from "../../assets/Poli2_menu.jpeg";
+import imgPoli from "../../assets/Poli_menu.jpeg";
+import imgViaje from "../../assets/Viaje_menu.jpeg";
+---
+
+<section
+  id="about"
+  class="w-full mx-auto mt-16 px-4 md:px-12 py-16 relative min-h-[40vh] z-10"
+>
+  <div class="bg-transparent mb-20">
+    <div class="text-center mb-20 relative w-full">
+      <h2
+        class="scroll-float text-[4rem] text-white font-bold inline-block relative pb-6 m-0 capitalize drop-shadow-[0_3px_6px_rgba(0,29,61,0.5)] after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-[80px] after:h-[5px] after:bg-gradient-to-r after:from-marine-deep after:via-marine-teal after:to-marine-deep after:bg-[length:200%_auto] after:rounded-full after:shadow-[0_0_10px_rgba(0,206,209,0.5)] after:animate-[flowLine_3s_linear_infinite]"
+        data-key="about.title"
+      >
+        About
+      </h2>
+    </div>
+
+    <div
+      class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 mb-20 relative w-full"
+    >
+      <!-- Foto Profile (Izquierda en desktop, Centro en mobile) -->
+      <div class="flex justify-center lg:flex-[1.2] w-full">
+        <div
+          class="absolute inset-0 bg-marine-teal/20 rounded-full blur-[50px] transition-all duration-700 group-hover:bg-marine-teal/40 group-hover:blur-[70px]"
+        >
+        </div>
+        <img
+          src={yoCallendo.src}
+          alt="Eric Cayendo"
+          class="w-full lg:min-w-[45rem] lg:scale-100 h-auto object-contain relative z-10 drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)] animate-[float_5s_ease-in-out_infinite] transition-transform duration-500 hover:scale-110 hover:-translate-y-4"
+        />
+      </div>
+      <div class="w-full lg:flex-1">
+        <p
+          class="scroll-reveal text-[1.8rem] text-gray-300 mb-8 text-justify font-body leading-relaxed z-10 relative drop-shadow-md"
+          data-key="about.p1"
+        >
+          ¡Hola! Soy Eric Perucho. Mi camino en el código empezó con una meta clara: entender cómo funcionan las cosas desde adentro. Soy Desarrollador Full Stack con base en análisis de sistemas, pero más que eso, soy un apasionado por resolver problemas y nunca dejar de aprender.
+        </p>
+        <p
+          class="scroll-reveal text-[1.8rem] text-gray-300 mb-8 text-justify font-body leading-relaxed z-10 relative drop-shadow-md"
+          data-key="about.p2"
+        >
+          Hace poco decidí llevar mi aprendizaje al siguiente nivel creando Perucho Dev, un espacio donde comparto mi proceso dominando la lógica de programación y lenguajes como Java y Python. No solo busco construir software robusto; mi objetivo es diseñar soluciones que realmente le hagan la vida más fácil al usuario.
+        </p>
+        <p
+          class="scroll-reveal text-[1.8rem] text-gray-300 mb-8 text-justify font-body leading-relaxed z-10 relative drop-shadow-md"
+          data-key="about.p3"
+        >
+          Actualmente estoy en proceso de titulación y siempre busco entornos donde la precisión y el trabajo en equipo sean la clave. Si algo me define, es mi curiosidad insaciable: si no lo sé, lo investigo; si lo aprendo, te lo explico.
+        </p>
+
+        <blockquote
+          class="mt-12 border-l-4 border-[#00ffff] pl-8 italic bg-white/5 p-4 rounded-r-lg"
+        >
+          <p
+            class="font-serif text-[2rem] text-white mb-4 drop-shadow-md"
+            data-key="about.quote"
+          >
+            "El mar, una vez que lanza su hechizo, atrapa a uno en su red de
+            maravillas para siempre."
+          </p>
+          <footer
+            class="text-right font-bold text-gray-400 text-[1.6rem]"
+            data-key="about.author"
+          >
+            - Jacques Yves Cousteau
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mb-16 relative w-full flex flex-col items-center">
+    <h2
+      class="scroll-float text-[4rem] text-white font-bold inline-block relative pb-6 m-0 capitalize drop-shadow-[0_3px_6px_rgba(0,29,61,0.5)] after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-[80px] after:h-[5px] after:bg-gradient-to-r after:from-marine-deep after:via-marine-teal after:to-marine-deep after:bg-[length:200%_auto] after:rounded-full after:shadow-[0_0_10px_rgba(0,206,209,0.5)] after:animate-[flowLine_3s_linear_infinite]"
+      data-key="about.gallery"
+    >
+      Galería
+    </h2>
+  </div>
+
+  <div
+    class="h-[800px] w-full max-w-[140rem] px-4 md:px-8 mx-auto relative rounded-3xl overflow-hidden mb-20"
+  >
+    <InfiniteMenu
+      client:only="react"
+      items={[
+        {
+          image: imgDog.src,
+          link: "#",
+          title: "Primeros Pasos",
+          description:
+            "Recordando donde empezó todo. Cada pequeño paso cuenta.",
+        },
+        {
+          image: imgFriendst.src,
+          link: "#",
+          title: "Lazos Verdaderos",
+          description:
+            "Los mejores ratos se viven con la mejor compañía. Instantes que se vuelven inolvidables.",
+        },
+        {
+          image: imgJapon.src,
+          link: "#",
+          title: "Próximo Destino: Japón",
+          description:
+            "Una meta clara en el horizonte. Una cultura que admiro y un sueño que pronto será realidad.",
+        },
+        {
+          image: imgMoure.src,
+          link: "#",
+          title: "Comunidad Tech",
+          description:
+            "He tenido la oportunidad de conocer a personas increíbles como Brais (MoureDev). El aprendizaje en comunidad es mi motor.",
+        },
+        {
+          image: imgParacaidas.src,
+          link: "#",
+          title: "Pura Adrenalina",
+          description:
+            "Salir de la zona de confort. Me encantan los retos extremos, ya sea un salto en paracaídas o un bug difícil.",
+        },
+        {
+          image: imgPoli2.src,
+          link: "#",
+          title: "Liderazgo",
+          description:
+            "Durante mi carrera logré formar una gran comunidad. Crecer en equipo es clave para el éxito.",
+        },
+        {
+          image: imgPoli.src,
+          link: "#",
+          title: "Licenciatura",
+          description:
+            "Orgulloso de haberme graduado con excelencia, cerrando un ciclo impecable en el Politécnico.",
+        },
+        {
+          image: imgViaje.src,
+          link: "#",
+          title: "Espíritu Aventurero",
+          description:
+            "Viajar y descubrir nuevos lugares es mi pasión. Cada destino es una nueva perspectiva del mundo.",
+        },
+      ]}
+      scale={1}
+    />
+  </div>
+</section>
+
+<!-- Sección Skills (Logo Loop) -->
+<div class="bg-transparent mb-20 w-full overflow-hidden relative mt-24">
+  <div class="text-center mb-16 relative w-full flex flex-col items-center">
+    <h2
+      class="scroll-float text-[4rem] text-white font-bold inline-block relative pb-6 m-0 capitalize drop-shadow-[0_3px_6px_rgba(0,29,61,0.5)] after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-[80px] after:h-[5px] after:bg-gradient-to-r after:from-marine-deep after:via-marine-teal after:to-marine-deep after:bg-[length:200%_auto] after:rounded-full after:shadow-[0_0_10px_rgba(0,206,209,0.5)] after:animate-[flowLine_3s_linear_infinite]"
+      data-key="skills.title"
+    >
+      Skills
+    </h2>
+  </div>
+
+  <div class="relative flex w-full overflow-hidden group mask-image-fade py-8">
+    <!-- First Marquee Track -->
+    <div
+      class="flex animate-marquee whitespace-nowrap group-hover:[animation-play-state:paused]"
+    >
+      {
+        [
+          {
+            name: "Astro",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg",
+          },
+          {
+            name: "Java",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+          },
+          {
+            name: "Python",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+          },
+          {
+            name: "MySQL",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+          },
+          {
+            name: "Git",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+          },
+          {
+            name: "GitHub",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+          },
+          {
+            name: "Node.js",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+          },
+          {
+            name: "JavaScript",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+          },
+          {
+            name: "HTML",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+          },
+          {
+            name: "CSS",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+          },
+          {
+            name: "TypeScript",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+          },
+          {
+            name: "Tailwind",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+          },
+          {
+            name: "PostgreSQL",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+          },
+        ].map((skill) => (
+          <div class="flex flex-col items-center justify-center mx-8 sm:mx-12 min-w-[120px] transition-transform duration-300 hover:scale-110">
+            <div class="w-[70px] h-[70px] mb-4 bg-white/10 backdrop-blur-sm p-3 rounded-2xl shadow-lg border border-white/20 flex items-center justify-center">
+              <img
+                src={skill.img}
+                alt={skill.name}
+                class="w-full h-full object-contain drop-shadow-md"
+                loading="lazy"
+                onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-original.svg';"
+              />
+            </div>
+            <span class="text-white font-bold text-[1.4rem] tracking-wide drop-shadow-md">
+              {skill.name}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Second Marquee Track (Duplicate for seamless loop) -->
+    <div
+      class="flex animate-marquee2 whitespace-nowrap absolute top-8 group-hover:[animation-play-state:paused]"
+    >
+      {
+        [
+          {
+            name: "Astro",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg",
+          },
+          {
+            name: "Java",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+          },
+          {
+            name: "Python",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+          },
+          {
+            name: "MySQL",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+          },
+          {
+            name: "Git",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+          },
+          {
+            name: "GitHub",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+          },
+          {
+            name: "Node.js",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+          },
+          {
+            name: "JavaScript",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+          },
+          {
+            name: "HTML",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+          },
+          {
+            name: "CSS",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+          },
+          {
+            name: "TypeScript",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+          },
+          {
+            name: "Tailwind",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+          },
+          {
+            name: "PostgreSQL",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+          },
+        ].map((skill) => (
+          <div class="flex flex-col items-center justify-center mx-8 sm:mx-12 min-w-[120px] transition-transform duration-300 hover:scale-110">
+            <div class="w-[70px] h-[70px] mb-4 bg-white/10 backdrop-blur-sm p-3 rounded-2xl shadow-lg border border-white/20 flex items-center justify-center">
+              <img
+                src={skill.img}
+                alt={skill.name}
+                class="w-full h-full object-contain drop-shadow-md"
+                loading="lazy"
+                onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-original.svg';"
+              />
+            </div>
+            <span class="text-white font-bold text-[1.4rem] tracking-wide drop-shadow-md">
+              {skill.name}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .mask-image-fade {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+  .animate-marquee {
+    animation: marquee 35s linear infinite;
+  }
+  .animate-marquee2 {
+    animation: marquee2 35s linear infinite;
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes marquee2 {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  .animate-marquee-right {
+    animation: marquee-right 45s linear infinite;
+  }
+  .animate-marquee-right2 {
+    animation: marquee-right2 45s linear infinite;
+  }
+  @keyframes marquee-right {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes marquee-right2 {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+</style>

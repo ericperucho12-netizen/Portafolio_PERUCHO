@@ -1,0 +1,89 @@
+---
+// @ts-nocheck
+import buceando from '../../assets/buceando (1).png';
+import pezAvizal from '../../assets/pezAvizal.png';
+import CurvedInput from '../ui/CurvedInput.jsx';
+---
+<section id="contact" class="w-full mx-auto mt-16 px-4 md:px-8 pt-16 pb-8 relative z-10 overflow-visible">
+    <div class="text-center mb-20 relative w-full">
+        <h2 class="scroll-float text-[4rem] text-white font-bold inline-block relative pb-6 m-0 capitalize drop-shadow-[0_3px_6px_rgba(0,29,61,0.5)] after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-[80px] after:h-[5px] after:bg-gradient-to-r after:from-marine-deep after:via-marine-teal after:to-marine-deep after:bg-[length:200%_auto] after:rounded-full after:shadow-[0_0_10px_rgba(0,206,209,0.5)] after:animate-[flowLine_3s_linear_infinite]" data-key="contact.title">Contacto</h2>
+    </div>
+    
+    <!-- Tarjeta de Contacto con CurvedInput -->
+    <div class="scroll-reveal w-[95%] max-w-[55rem] mx-auto relative z-10 mt-10 flex flex-col items-center">
+        <div class="w-full bg-[#03050c]/60 p-12 md:p-16 rounded-[2.5rem] backdrop-blur-xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.7)] flex flex-col items-center justify-center text-center">
+            
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-md">¿Tienes una idea en mente?</h3>
+            <p class="text-gray-300 text-lg md:text-xl mb-12 max-w-[45ch]">Envíame un mensaje rápido y construyamos juntos algo asombroso desde las profundidades de la web.</p>
+
+            <div class="w-full max-w-[45rem]">
+                <CurvedInput 
+                    client:load 
+                    bend={25} 
+                    height={65} 
+                    placeholder="ejemplo@correo.com" 
+                    buttonText="Enviar" 
+                    theme="dark"
+                    buttonColor="#00ced1"
+                    iconColor="#00ced1"
+                />
+            </div>
+        </div>
+    </div>
+
+    <!-- Escena Abisal (Buceando y Pez Abisal) flotante, sin ocupar espacio de layout -->
+    <div id="deep-ocean-scene" class="absolute bottom-[-50px] md:bottom-[-100px] left-0 w-full pointer-events-none z-1 overflow-visible">
+        
+        <!-- Eric Buceando (A la izquierda, más grande) -->
+        <div class="absolute left-[-20px] md:left-[5%] lg:left-[10%] bottom-[40px] md:bottom-[70px] z-10 animate-[float_6s_ease-in-out_infinite]">
+            <img 
+                src={buceando.src} 
+                alt="Buceando" 
+                class="w-[200px] md:w-[350px] lg:w-[450px] drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]"
+            >
+        </div>
+        
+        <!-- Pez Abisal Brillante (Se aleja y da la vuelta) -->
+        <div class="absolute left-[150px] md:left-[35%] lg:left-[35%] bottom-[20px] md:bottom-[50px] animate-[swimAround_18s_linear_infinite]">
+            <img 
+                src={pezAvizal.src} 
+                alt="Pez Abisal" 
+                class="w-[100px] md:w-[180px] lg:w-[250px]"
+            >
+        </div>
+    </div>
+
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes swimAround {
+    0%, 10% { 
+        transform: translate(0, 0) scaleX(1); /* Mirando a Eric */
+        filter: drop-shadow(0 0 50px rgba(0, 255, 255, 1)); 
+    }
+    15% {
+        transform: translate(0, 0) scaleX(-1); /* Se voltea a la derecha */
+        filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.4));
+    }
+    45% { 
+        transform: translate(45vw, -30px) scaleX(-1); /* Nada hacia la derecha */
+        filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.4)); 
+    }
+    50%, 60% { 
+        transform: translate(45vw, -30px) scaleX(1); /* Se voltea a la izquierda */
+        filter: drop-shadow(0 0 50px rgba(0, 255, 255, 1)); 
+    }
+    90% { 
+        transform: translate(0, 0) scaleX(1); /* Nada de regreso */
+        filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.4)); 
+    }
+    100% { 
+        transform: translate(0, 0) scaleX(1); 
+        filter: drop-shadow(0 0 50px rgba(0, 255, 255, 1)); 
+    }
+  }
+</style>
+</section>

@@ -1,7 +1,8 @@
 ---
 import '../styles/global.css';
-import OceanEntry from '../components/OceanEntry.astro';
 import LightRays from '../components/ui/LightRays.jsx';
+import Ferrofluid from '../components/ui/Ferrofluid.jsx';
+import OceanEntry from '../components/layout/OceanEntry.astro';
 ---
 
 <!DOCTYPE html>
@@ -18,6 +19,17 @@ import LightRays from '../components/ui/LightRays.jsx';
 
     <!-- Splash Screen — Se elimina tras hacer clic en "Sumergirse" -->
     <OceanEntry />
+
+    <!-- Efecto Ferrofluid (Oleaje de Mar) -->
+    <div class="fixed inset-0 pointer-events-none z-0 opacity-60">
+      <Ferrofluid 
+        client:only="react" 
+        colors={['#001d3d', '#00ced1', '#0d1326', '#e0f7fa']} 
+        className=""
+        dpr={1}
+        mixBlendMode="normal"
+      />
+    </div>
 
     <!-- Efecto de rayos de luz submarinos globales -->
     <div class="fixed inset-0 pointer-events-none z-0 opacity-40 mix-blend-screen h-[100vh]">

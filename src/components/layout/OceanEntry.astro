@@ -1,5 +1,5 @@
 ---
-import yoSentado from "../assets/YoSentado.png";
+import yoSentado from "../../assets/YoSentado.png";
 ---
 
 <!-- ═══ VIDEO ENTRY — Splash Screen Overlay ═══ -->
@@ -432,12 +432,6 @@ import yoSentado from "../assets/YoSentado.png";
       e.stopPropagation();
       // Ensure video plays (in case it was blocked and this is the first click)
       playVideo();
-
-      // Play splash sound
-      if (splashSound) {
-        splashSound.volume = 1.0;
-        splashSound.play().catch(err => console.log("Splash audio blocked:", err));
-      }
 
       // Trigger dive animation
       oceanEntry.classList.add("diving");

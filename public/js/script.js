@@ -106,12 +106,6 @@ function crearBurbujas(selectorSeccion, cantidad) {
     }
 }
 
-// EJECUCIÓN: Llama a la función con el ID de la sección y la cantidad de burbujas
-crearBurbujas('#home', 5);      // 5 burbujas en Home
-crearBurbujas('#about', 8);     // 8 burbujas en About
-crearBurbujas('#portafolio', 20); // 20 burbujas en Portafolio
-crearBurbujas('#contact', 35);   // 35 burbujas en Contacto
-
 // --- MENÚ HAMBURGUESA ---
 const mobileMenuBtn = document.querySelector('.mobile-menu');
 const navegacion = document.querySelector('.navegacion');
@@ -212,7 +206,7 @@ const translations = {
     }
 };
 
-let currentLang = 'en'; // Idioma por defecto
+let currentLang = localStorage.getItem('portfolio_lang') || 'en'; // Idioma por defecto desde localStorage
 
 function updateLanguage(lang) {
     const elements = document.querySelectorAll('[data-key]');
@@ -245,7 +239,9 @@ const langToggleBtn = document.getElementById('lang-toggle');
 if (langToggleBtn) {
     langToggleBtn.addEventListener('click', () => {
         currentLang = currentLang === 'es' ? 'en' : 'es';
+        localStorage.setItem('portfolio_lang', currentLang);
         updateLanguage(currentLang);
+        window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: currentLang, translations: translations[currentLang] } }));
     });
 }
 
@@ -340,4 +336,26 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 
 revealElements.forEach(el => {
     revealObserver.observe(el);
+});
+
+// --- LÓGICA DE ANIMACIÓN AL HACER SCROLL ---
+document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15 // 15% del elemento debe ser visible para animarse
+    };
+
+    const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            } else {
+                entry.target.classList.remove('in-view');
+            }
+        });
+    }, observerOptions);
+
+    const sElements = document.querySelectorAll('.scroll-reveal, .scroll-float');
+    sElements.forEach(el => scrollObserver.observe(el));
 });

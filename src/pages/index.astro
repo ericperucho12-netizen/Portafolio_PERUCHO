@@ -1,18 +1,71 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
-import About from "../components/About.astro";
-import Portfolio from "../components/Portfolio.astro";
-import Contact from "../components/Contact.astro";
-import Footer from "../components/Footer.astro";
+import Header from "../components/layout/Header.astro";
+import Hero from "../components/sections/Hero.astro";
+import About from "../components/sections/About.astro";
+import Portfolio from "../components/sections/Portfolio.astro";
+import Contact from "../components/sections/Contact.astro";
+import Footer from "../components/layout/Footer.astro";
+import Blog from "../components/sections/Blog.astro";
 ---
 
 <Layout>
-  <Header />
-  <Hero />
+  <div id="falling-container" class="opacity-0 w-full relative">
+    <Header />
+    <Hero />
+  </div>
   <About />
   <Portfolio />
+  <Blog />
   <Contact />
   <Footer />
 </Layout>
+
+<style>
+  .animate-fallIntoSeaContainer {
+    animation: fallIntoSeaContainer 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      forwards;
+  }
+
+  @keyframes fallIntoSeaContainer {
+    0% {
+      transform: translateY(-120vh) rotate(-3deg);
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    75% {
+      transform: translateY(4vh) rotate(1deg); /* Se hunde un poco al caer (impacto) */
+    }
+    90% {
+      transform: translateY(-1vh) rotate(-0.5deg); /* Rebote hacia arriba (flotabilidad) */
+    }
+    100% {
+      transform: translateY(0) rotate(0deg); /* Estabilización final */
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  const fallingContainer = document.getElementById("falling-container");
+
+  if (fallingContainer) {
+    document.addEventListener("start-falling-hero", () => {
+      setTimeout(() => {
+        fallingContainer.classList.remove("opacity-0");
+        fallingContainer.classList.add("animate-fallIntoSeaContainer");
+      }, 500); // 500ms delay to wait for OceanEntry to start dissolving
+    });
+
+    // Remove the animation class when done so 'sticky' positioning works again for Header
+    fallingContainer.addEventListener("animationend", (evt) => {
+      if (evt.animationName === "fallIntoSeaContainer") {
+        fallingContainer.classList.remove("animate-fallIntoSeaContainer");
+        // Keep it visible
+        fallingContainer.classList.remove("opacity-0");
+      }
+    });
+  }
+</script>

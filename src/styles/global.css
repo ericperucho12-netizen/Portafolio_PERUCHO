@@ -62,12 +62,65 @@
   100% { opacity: 0; transform: translate(var(--foam-dx, 40px), var(--foam-dy, -20px)) scale(0.4); }
 }
 
+/* ═══ BUBBLES ANIMATION ═══ */
+.burbuja {
+  position: absolute;
+  bottom: -50px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+  border-radius: 50%;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+  animation: floatUp linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
 /* ═══ EXISTING SITE ANIMATIONS ═══ */
 
 @keyframes float {
   0% { transform: translateY(0px) rotate(0deg); }
   50% { transform: translateY(-20px) rotate(2deg); }
   100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* ═══ ANIMACIONES SCROLL (AOS) ═══ */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  will-change: opacity, transform;
+}
+.scroll-reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-float {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+.scroll-float.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 @keyframes flowLine {
