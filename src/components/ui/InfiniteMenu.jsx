@@ -923,9 +923,9 @@ export default function InfiniteMenu({ items = [], scale = 1.0 }) {
 
       {activeItem && (
         <>
-          <h2 className={`face-title ${isMoving ? 'inactive' : 'active'}`}>{activeItem.title}</h2>
+          <h2 className={`face-title ${isMoving ? 'inactive' : 'active'}`} data-key={activeItem.dataKeyTitle}>{activeItem.title}</h2>
 
-          <p className={`face-description ${isMoving ? 'inactive' : 'active'}`}> {activeItem.description}</p>
+          <p className={`face-description ${isMoving ? 'inactive' : 'active'}`} data-key={activeItem.dataKeyDesc}> {activeItem.description}</p>
 
           <div onClick={handleButtonClick} className={`action-button ${isMoving ? 'inactive' : 'active'}`}>
             <p className="action-button-icon">&#x2197;</p>
