@@ -295,17 +295,33 @@ function updateLanguage(lang) {
     
     elements.forEach(element => {
         const key = element.getAttribute('data-key');
-        if (translations[lang] && translations[lang][key]) {
-            // Si es un input o textarea con placeholder
-            if ((element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') && element.hasAttribute('placeholder')) {
-                element.placeholder = translations[lang][key];
-            }
-            // Si el elemento contiene HTML (como el BR en Coming Soon), usar innerHTML
-            else if (element.tagName === 'H1' || element.tagName === 'P' || element.tagName === 'SPAN') {
-                element.innerHTML = translations[lang][key];
+        if (!translations[lang] || !translations[lang][key]) return;
+
+        const translation = translations[lang][key];
+
+        // Inputs y textareas → actualizar placeholder
+        if ((element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') && element.hasAttribute('placeholder')) {
+            element.placeholder = translation;
+        }
+        // Links <a> que pueden tener íconos SVG dentro → actualizar solo el último nodo de texto
+        else if (element.tagName === 'A') {
+            // Buscar el nodo de texto directo (no dentro del SVG)
+            const textNodes = Array.from(element.childNodes).filter(n => n.nodeType === Node.TEXT_NODE);
+            if (textNodes.length > 0) {
+                textNodes[textNodes.length - 1].textContent = ' ' + translation;
             } else {
-                element.textContent = translations[lang][key];
+                // Si no hay nodo de texto directo, agregar uno al final
+                const textNode = document.createTextNode(' ' + translation);
+                element.appendChild(textNode);
             }
+        }
+        // Elementos de bloque/encabezado que soportan innerHTML (H1, H2, H3, P, SPAN, DIV sin hijos complejos)
+        else if (['H1', 'H2', 'H3', 'P', 'SPAN', 'DIV'].includes(element.tagName)) {
+            element.innerHTML = translation;
+        }
+        // Todo lo demás → textContent
+        else {
+            element.textContent = translation;
         }
     });
 

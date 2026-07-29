@@ -870,6 +870,16 @@ export default function InfiniteMenu({ items = [], scale = 1.0 }) {
   const canvasRef = useRef(null);
   const [activeItem, setActiveItem] = useState(null);
   const [isMoving, setIsMoving] = useState(false);
+  const [currentTranslations, setCurrentTranslations] = useState(null);
+
+  // Escuchar cambios de idioma desde script.js
+  useEffect(() => {
+    const handleLangChange = (e) => {
+      setCurrentTranslations(e.detail.translations);
+    };
+    window.addEventListener('languageChanged', handleLangChange);
+    return () => window.removeEventListener('languageChanged', handleLangChange);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -917,15 +927,30 @@ export default function InfiniteMenu({ items = [], scale = 1.0 }) {
     }
   };
 
+  // Obtener texto traducido si hay traducciones activas, de lo contrario usar el texto original
+  const getTitle = () => {
+    if (currentTranslations && activeItem?.dataKeyTitle && currentTranslations[activeItem.dataKeyTitle]) {
+      return currentTranslations[activeItem.dataKeyTitle];
+    }
+    return activeItem?.title || '';
+  };
+
+  const getDesc = () => {
+    if (currentTranslations && activeItem?.dataKeyDesc && currentTranslations[activeItem.dataKeyDesc]) {
+      return currentTranslations[activeItem.dataKeyDesc];
+    }
+    return activeItem?.description || '';
+  };
+
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%' }}>
       <canvas id="infinite-grid-menu-canvas" ref={canvasRef} />
 
       {activeItem && (
         <>
-          <h2 className={`face-title ${isMoving ? 'inactive' : 'active'}`} data-key={activeItem.dataKeyTitle}>{activeItem.title}</h2>
+          <h2 className={`face-title ${isMoving ? 'inactive' : 'active'}`}>{getTitle()}</h2>
 
-          <p className={`face-description ${isMoving ? 'inactive' : 'active'}`} data-key={activeItem.dataKeyDesc}> {activeItem.description}</p>
+          <p className={`face-description ${isMoving ? 'inactive' : 'active'}`}> {getDesc()}</p>
 
           <div onClick={handleButtonClick} className={`action-button ${isMoving ? 'inactive' : 'active'}`}>
             <p className="action-button-icon">&#x2197;</p>
