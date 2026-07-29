@@ -1,5 +1,6 @@
 ---
-import bannerTiktok from "../../assets/Banner titok.png";
+import bannerTiktokES from "../../assets/Banner titok.png";
+import bannerTiktokEN from "../../assets/Banner titok_ingles.png";
 ---
 
 <section id="blog" class="pt-8 pb-20 relative z-10 w-[min(95%,120rem)] mx-auto">
@@ -21,7 +22,10 @@ import bannerTiktok from "../../assets/Banner titok.png";
       class="block relative"
     >
       <img
-        src={bannerTiktok.src}
+        id="blog-banner-img"
+        src={bannerTiktokEN.src}
+        data-src-es={bannerTiktokES.src}
+        data-src-en={bannerTiktokEN.src}
         alt="Banner de TikTok"
         class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
       />
@@ -205,3 +209,19 @@ import bannerTiktok from "../../assets/Banner titok.png";
 
 <!-- Script Oficial de Embed de TikTok -->
 <script async src="https://www.tiktok.com/embed.js" is:inline></script>
+<script is:inline>
+  const updateBlogBanner = () => {
+    const bannerImg = document.getElementById("blog-banner-img");
+    if (bannerImg) {
+      const lang = localStorage.getItem("portfolio_lang") || "en";
+      const newSrc = lang === "es" ? bannerImg.getAttribute("data-src-es") : bannerImg.getAttribute("data-src-en");
+      if (newSrc) {
+        bannerImg.setAttribute("src", newSrc);
+      }
+    }
+  };
+
+  window.addEventListener("languageChanged", updateBlogBanner);
+  document.addEventListener("DOMContentLoaded", updateBlogBanner);
+  updateBlogBanner();
+</script>

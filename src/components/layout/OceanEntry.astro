@@ -1,5 +1,6 @@
 ---
 import yoSentado from "../../assets/YoSentado.png";
+import FallingText from "../ui/FallingText.jsx";
 ---
 
 <!-- ═══ VIDEO ENTRY — Splash Screen Overlay ═══ -->
@@ -18,12 +19,23 @@ import yoSentado from "../../assets/YoSentado.png";
   <!-- ═══ SPLASH SOUND EFFECT ═══ -->
   <audio id="splash-sound" src="/audio/splash.mp3" preload="auto"></audio>
 
-  <!-- ═══ AUDIO TOGGLE ═══ -->
-  <button
-    id="audio-toggle"
-    class="entry-audio-btn absolute top-6 right-6 sm:top-8 sm:right-8 z-[40] w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110"
-    aria-label="Activar o desactivar sonido"
-  >
+  <!-- ═══ CONTROLS (Audio & Lang) ═══ -->
+  <div class="absolute top-6 right-6 sm:top-8 sm:right-8 z-[40] flex items-center gap-3">
+    <!-- ═══ LANGUAGE TOGGLE ═══ -->
+    <button
+      id="splash-lang-toggle"
+      class="entry-audio-btn w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 text-white font-bold text-sm tracking-wider"
+      aria-label="Cambiar idioma"
+    >
+      ES
+    </button>
+
+    <!-- ═══ AUDIO TOGGLE ═══ -->
+    <button
+      id="audio-toggle"
+      class="entry-audio-btn w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110"
+      aria-label="Activar o desactivar sonido"
+    >
     <!-- Sound On Icon (Default) -->
     <svg
       id="sound-on-icon"
@@ -61,6 +73,7 @@ import yoSentado from "../../assets/YoSentado.png";
       <line x1="17" y1="9" x2="23" y2="15"></line>
     </svg>
   </button>
+  </div>
 
   <!-- ═══ PERSON SITTING ON THE SAND ═══ -->
   <div
@@ -72,6 +85,25 @@ import yoSentado from "../../assets/YoSentado.png";
       class="w-[140px] sm:w-[180px] md:w-[260px] lg:w-[320px] h-auto select-none"
       style="filter: drop-shadow(3px 6px 14px rgba(0,0,0,0.7));"
       draggable="false"
+    />
+  </div>
+
+  <!-- ═══ FALLING TEXT CENTER ═══ -->
+  <div class="absolute inset-0 z-[30] pointer-events-none hidden md:block">
+    <!-- El contenedor del texto que cae ocupa toda la pantalla para que las letras caigan hasta abajo -->
+    <FallingText
+      client:only="react"
+      text="Bienvenido a mi Portafolio"
+      textEN="Welcome to my Portfolio"
+      highlightWords={["Bienvenido", "Portafolio"]}
+      highlightWordsEN={["Welcome", "Portfolio"]}
+      highlightClass="text-[#00ffff] font-extrabold drop-shadow-[0_0_15px_rgba(0,255,255,0.8)]"
+      trigger="click"
+      backgroundColor="transparent"
+      wireframes={false}
+      gravity={0.8}
+      fontSize="clamp(2.5rem, 5vw, 4.5rem)"
+      className="font-staatliches w-full h-full pointer-events-none flex flex-col justify-start items-start pt-[8%] pl-[5%] text-white select-none drop-shadow-[0_5px_10px_rgba(0,0,0,0.8)] leading-tight text-left"
     />
   </div>
 
@@ -143,6 +175,13 @@ import yoSentado from "../../assets/YoSentado.png";
 
 <!-- ═══ SCOPED STYLES ═══ -->
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Staatliches&family=Unbounded:wght@200..900&family=Yuyu+Short&display=swap');
+
+  .font-staatliches {
+    font-family: 'Staatliches', cursive;
+    letter-spacing: 2px;
+  }
+
   .entry-glass {
     background: rgba(10, 15, 30, 0.4);
     backdrop-filter: blur(12px);
@@ -386,6 +425,34 @@ import yoSentado from "../../assets/YoSentado.png";
   const audioToggle = document.getElementById("audio-toggle");
   const soundOnIcon = document.getElementById("sound-on-icon");
   const soundOffIcon = document.getElementById("sound-off-icon");
+  const langToggle = document.getElementById("splash-lang-toggle");
+  const splashSubtitle = document.getElementById("splash-subtitle");
+
+  // Language Setup
+  const initLang = localStorage.getItem("portfolio_lang") || "es";
+  
+  const updateSplashLang = (lang: string) => {
+    if (langToggle) langToggle.textContent = lang.toUpperCase();
+    if (diveBtn) diveBtn.textContent = lang === "es" ? "Entrar" : "Enter";
+    if (splashSubtitle) {
+      splashSubtitle.innerHTML = lang === "es" 
+        ? 'Da clic en las letras o presiona <span class="font-bold text-[#00ffff]">Enter</span>' 
+        : 'Click the letters or press <span class="font-bold text-[#00ffff]">Enter</span>';
+    }
+  };
+
+  updateSplashLang(initLang);
+
+  if (langToggle) {
+    langToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const current = localStorage.getItem("portfolio_lang") || "es";
+      const nextLang = current === "es" ? "en" : "es";
+      localStorage.setItem("portfolio_lang", nextLang);
+      updateSplashLang(nextLang);
+      window.dispatchEvent(new CustomEvent("languageChanged", { detail: nextLang }));
+    });
+  }
 
   if (oceanEntry) {
     document.body.style.overflow = "hidden";
@@ -425,27 +492,45 @@ import yoSentado from "../../assets/YoSentado.png";
     });
   }
 
-  const splashSound = document.getElementById("splash-sound") as HTMLAudioElement;
+  const splashSound = document.getElementById(
+    "splash-sound",
+  ) as HTMLAudioElement;
+
+  const handleEnter = (e?: Event) => {
+    if (e) e.stopPropagation();
+    if (!oceanEntry) return;
+    // Ensure video plays
+    playVideo();
+
+    // Play splash sound
+    if (splashSound) {
+      splashSound.volume = 0.5;
+      splashSound.play().catch((err) => console.log("Audio block", err));
+    }
+
+    // Trigger dive animation
+    oceanEntry.classList.add("diving");
+
+    // Dispatch event for Hero.astro to start the falling animation
+    document.dispatchEvent(new CustomEvent("start-falling-hero"));
+
+    // After animation completes, remove splash and unlock scroll
+    oceanEntry.addEventListener("animationend", (evt) => {
+      if (evt.animationName === "diveAway") {
+        oceanEntry.remove();
+        document.body.style.overflow = "";
+      }
+    });
+  };
 
   if (diveBtn && oceanEntry) {
-    diveBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      // Ensure video plays (in case it was blocked and this is the first click)
-      playVideo();
+    diveBtn.addEventListener("click", handleEnter);
 
-      // Trigger dive animation
-      oceanEntry.classList.add("diving");
-
-      // Dispatch event for Hero.astro to start the falling animation
-      document.dispatchEvent(new CustomEvent('start-falling-hero'));
-
-      // After animation completes, remove splash and unlock scroll
-      oceanEntry.addEventListener("animationend", (evt) => {
-        if (evt.animationName === "diveAway") {
-          oceanEntry.remove();
-          document.body.style.overflow = "";
-        }
-      });
+    // Add global keydown listener for Enter key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && !oceanEntry.classList.contains("diving")) {
+        handleEnter(e);
+      }
     });
   }
 </script>

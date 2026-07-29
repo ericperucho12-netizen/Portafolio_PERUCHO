@@ -1,6 +1,10 @@
 ---
 import ScrollStack, { ScrollStackItem } from "../ui/ScrollStack.jsx";
 import imgBasquet from "../../assets/LandinBasquetbol.png";
+import imgRenagas from "../../assets/Renagas.png";
+import imgHuellitas from "../../assets/MarcandoHuellitas.png";
+import imgULA from "../../assets/ULA.png";
+import imgPrivad from "../../assets/404Private.png";
 ---
 
 <section
@@ -20,101 +24,677 @@ import imgBasquet from "../../assets/LandinBasquetbol.png";
     class="h-[1000px] xl:h-[850px] w-full relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black/20 backdrop-blur-sm"
   >
     <ScrollStack client:load>
+      <!-- Proyecto 1 -->
       <ScrollStackItem
         itemClassName="bg-[#03050c]/95 text-white flex flex-col xl:flex-row justify-center items-center gap-12 p-8 md:p-16 border-2 border-[#00ffff]/30 relative overflow-hidden"
       >
         <!-- Decoraciones de luz en el fondo -->
-        <div class="absolute top-0 right-0 w-64 h-64 bg-[#00ffff]/10 rounded-full blur-[80px] pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#00ced1]/10 rounded-full blur-[80px] pointer-events-none"></div>
+        <div
+          class="absolute top-0 right-0 w-64 h-64 bg-[#00ffff]/10 rounded-full blur-[80px] pointer-events-none"
+        >
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-64 h-64 bg-[#00ced1]/10 rounded-full blur-[80px] pointer-events-none"
+        >
+        </div>
 
         <!-- Columna de Texto -->
-        <div class="z-10 text-center xl:text-left flex-1 flex flex-col items-center xl:items-start max-w-4xl">
-          <div class="inline-block bg-[#00ffff]/10 text-[#00ffff] px-4 py-1.5 rounded-full font-bold mb-6 text-sm border border-[#00ffff]/20 backdrop-blur-sm uppercase tracking-wider">
-            Hackathon Generation
+        <div
+          class="z-10 text-center xl:text-left flex-1 flex flex-col items-center xl:items-start max-w-4xl"
+        >
+          <div
+            class="inline-block bg-[#00ffff]/10 text-[#00ffff] px-4 py-1.5 rounded-full font-bold mb-6 text-sm border border-[#00ffff]/20 backdrop-blur-sm uppercase tracking-wider"
+          >
+            Proyecto Integrador Generation
           </div>
-          <h2 class="text-[3.5rem] md:text-[4.5rem] font-bold mb-6 text-white drop-shadow-md leading-tight">
-            Landing Page <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00ced1] to-[#00ffff]">Básquetbol</span>
+          <h2
+            class="text-[3.5rem] md:text-[4.5rem] font-bold mb-6 text-white drop-shadow-md leading-tight"
+          >
+            Marcando <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFCFD2] to-[#FFCFD2]"
+              >Huellitas</span
+            >
           </h2>
-          <p class="text-[1.8rem] text-gray-300 mb-10 leading-relaxed max-w-[70ch]">
-            Una landing page dinámica desarrollada para un Hackathon. Diseñada para apasionados del básquetbol, ofrece una experiencia de usuario fluida, interfaces responsivas y un diseño moderno que atrapa la esencia del deporte.
+          <p
+            class="text-[1.8rem] text-gray-300 mb-10 leading-relaxed max-w-[70ch]"
+          >
+            Una pagina web desarrollada para un refugio de animales llamado
+            "Marcando Huellitas", con el objetivo de promover la adopción de
+            perros. En esta puedes encontrar informacion sobre los perros
+            disponibles para adopción, sus historias, caracteristicas y como
+            adoptarlos.
           </p>
-          
+
           <!-- Stack Tecnológico -->
-          <div class="flex flex-wrap justify-center xl:justify-start gap-4 mb-12">
-            <span class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" class="w-6 h-6" alt="HTML5" />
+          <div
+            class="flex flex-wrap justify-center xl:justify-start gap-4 mb-12"
+          >
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                class="w-6 h-6"
+                alt="HTML5"
+              />
               HTML5
             </span>
-            <span class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" class="w-6 h-6" alt="CSS3" />
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                class="w-6 h-6"
+                alt="CSS3"
+              />
               CSS3
             </span>
-            <span class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" class="w-6 h-6" alt="JavaScript" />
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                class="w-6 h-6"
+                alt="JavaScript"
+              />
               JavaScript
             </span>
-            <span class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" class="w-6 h-6" alt="Bootstrap" />
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+                class="w-6 h-6"
+                alt="Bootstrap"
+              />
               Bootstrap
             </span>
-            <span class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-6 h-6" alt="GitHub" style="filter: invert(1)" />
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                class="w-6 h-6"
+                alt="GitHub"
+                style="filter: invert(1)"
+              />
               GitHub
+            </span>
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+                class="w-6 h-6"
+                alt="MySQL"
+                style="filter: invert(1)"
+              />
+              MySQL
+            </span>
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+                class="w-6 h-6"
+                alt="Java"
+                style="filter: invert(1)"
+              />
+              Java
+            </span>
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"
+                class="w-6 h-6"
+                alt="Spring Boot"
+                style="filter: invert(1)"
+              />
+              Spring Boot
             </span>
           </div>
 
           <!-- Botones Enlace -->
           <div class="flex flex-wrap justify-center xl:justify-start gap-6">
-            <a 
-              href="https://landinbasquetbol.netlify.app" 
-              target="_blank" 
+            <a
+              href="https://landinbasquetbol.netlify.app"
+              target="_blank"
               class="group inline-flex items-center gap-3 bg-gradient-to-r from-[#001d3d] to-[#00ced1] text-white px-8 py-4 rounded-full font-bold text-[1.6rem] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(0,206,209,0.5)] border border-[#00ffff]/30"
             >
-              Ver Proyecto en Vivo
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              Demo del Proyecto
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                ><path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path><polyline points="15 3 21 3 21 9"></polyline><line
+                  x1="10"
+                  y1="14"
+                  x2="21"
+                  y2="3"></line></svg
+              >
             </a>
 
-            <a 
-              href="https://github.com/ericperucho12-netizen/landing_basquetbol.git" 
-              target="_blank" 
+            <a
+              href="https://github.com/ericperucho12-netizen/Marcando-Huellitas.git"
+              target="_blank"
               class="group inline-flex items-center gap-3 bg-[#03050c] text-white px-8 py-4 rounded-full font-bold text-[1.6rem] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] border border-white/20"
             >
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-8 h-8" alt="GitHub" style="filter: invert(1)" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                class="w-8 h-8"
+                alt="GitHub"
+                style="filter: invert(1)"
+              />
               Código Fuente
             </a>
           </div>
         </div>
 
         <!-- Columna de Imagen -->
-        <div class="z-10 flex-1 w-full max-w-3xl xl:max-w-none group mt-8 xl:mt-0">
-          <div class="relative rounded-2xl overflow-hidden border-2 border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-105 group-hover:shadow-[0_20px_50px_rgba(0,255,255,0.2)]">
-            <div class="absolute inset-0 bg-[#00ffff]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay z-10"></div>
-            <img src={imgBasquet.src} alt="Landing Basquetbol" class="w-full h-auto object-cover relative z-0" />
+        <div
+          class="z-10 flex-1 w-full max-w-3xl xl:max-w-none group mt-8 xl:mt-0"
+        >
+          <div
+            class="relative rounded-2xl overflow-hidden border-2 border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-105 group-hover:shadow-[0_20px_50px_rgba(0,255,255,0.2)]"
+          >
+            <div
+              class="absolute inset-0 bg-[#00ffff]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay z-10"
+            >
+            </div>
+            <img
+              src={imgHuellitas.src}
+              alt="Landing Basquetbol"
+              class="w-full h-auto object-cover relative z-0"
+            />
           </div>
         </div>
       </ScrollStackItem>
 
+      <!-- Proyecto 2 -->
       <ScrollStackItem
-        itemClassName="bg-[#0a0f1a] text-white flex flex-col justify-center items-center border-2 border-[#0077b6]/50"
+        itemClassName="bg-[#03050c]/95 text-white flex flex-col xl:flex-row justify-center items-center gap-12 p-8 md:p-16 border-2 border-[#0077b6]/30 relative overflow-hidden"
       >
-        <h2 class="text-[3rem] font-bold mb-4 text-[#0077b6]">Proyecto 2</h2>
-        <p class="text-[1.6rem] text-gray-300">
-          Descripción del segundo proyecto
-        </p>
+        <!-- Decoraciones de luz en el fondo -->
+        <div
+          class="absolute top-0 right-0 w-64 h-64 bg-[#00ffff]/10 rounded-full blur-[80px] pointer-events-none"
+        >
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-64 h-64 bg-[#00ced1]/10 rounded-full blur-[80px] pointer-events-none"
+        >
+        </div>
+
+        <!-- Columna de Texto -->
+        <div
+          class="z-10 text-center xl:text-left flex-1 flex flex-col items-center xl:items-start max-w-4xl"
+        >
+          <div
+            class="inline-block bg-[#00ffff]/10 text-[#00ffff] px-4 py-1.5 rounded-full font-bold mb-6 text-sm border border-[#00ffff]/20 backdrop-blur-sm uppercase tracking-wider"
+          >
+            ASEA Agencia de Seguridad, Energía y Ambiente
+          </div>
+          <h2
+            class="text-[3.3rem] md:text-[4.2rem] font-bold mb-6 text-white drop-shadow-md leading-tight"
+          >
+            Portal Web <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-[#00ced1] to-[#05DF72]"
+              >RENAGAS</span
+            >
+          </h2>
+          <p
+            class="text-[1.5rem] text-gray-300 mb-10 leading-relaxed max-w-[70ch]"
+          >
+            RENAGAS Fase 2 (o la segunda etapa del Registro Nacional de
+            Gasolineras y Plantas de GLP) es un programa extraordinario de
+            regularización ambiental implementado por la Agencia de Seguridad,
+            Energía y Ambiente (ASEA) en México. Requiere que las gasolineras y
+            plantas de GLP actualicen sus datos, utilicen firmas electrónicas y
+            cumplan con sus obligaciones ambientales.
+          </p>
+
+          <!-- Stack Tecnológico -->
+          <div
+            class="flex flex-wrap justify-center xl:justify-start gap-4 mb-12"
+          >
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                class="w-6 h-6"
+                alt="HTML5"
+              />
+              HTML5
+            </span>
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                class="w-6 h-6"
+                alt="CSS3"
+              />
+              CSS3
+            </span>
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                class="w-6 h-6"
+                alt="JavaScript"
+              />
+              JavaScript
+            </span>
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+                class="w-6 h-6"
+                alt="Bootstrap"
+              />
+              Bootstrap
+            </span>
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                class="w-6 h-6"
+                alt="Python"
+              />
+              Python
+            </span>
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+                class="w-6 h-6"
+                alt="PostgreSQL"
+              />
+              PostgreSQL
+            </span>
+          </div>
+
+          <!-- Botones Enlace -->
+          <div class="flex flex-wrap justify-center xl:justify-start gap-6">
+            <a
+              href="https://pronagas.asea.gob.mx/logingas"
+              target="_blank"
+              class="group inline-flex items-center gap-3 bg-gradient-to-r from-[#001d3d] to-[#00ced1] text-white px-8 py-4 rounded-full font-bold text-[1.6rem] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(0,206,209,0.5)] border border-[#00ffff]/30"
+            >
+              Ver página web
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                ><path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path><polyline points="15 3 21 3 21 9"></polyline><line
+                  x1="10"
+                  y1="14"
+                  x2="21"
+                  y2="3"></line></svg
+              >
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna de Imagen -->
+        <div
+          class="z-10 flex-1 w-full max-w-3xl xl:max-w-none group mt-8 xl:mt-0"
+        >
+          <div
+            class="relative rounded-2xl overflow-hidden border-2 border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-105 group-hover:shadow-[0_20px_50px_rgba(0,255,255,0.2)]"
+          >
+            <div
+              class="absolute inset-0 bg-[#00ffff]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay z-10"
+            >
+            </div>
+            <img
+              src={imgRenagas.src}
+              alt="Portal Web Renagas"
+              class="w-full h-auto object-cover relative z-0"
+            />
+          </div>
+        </div>
       </ScrollStackItem>
 
+      <!-- Proyecto 3 -->
       <ScrollStackItem
-        itemClassName="bg-[#03050c] text-white flex flex-col justify-center items-center border-2 border-marine-teal/50"
+        itemClassName="bg-[#03050c]/95 text-white flex flex-col xl:flex-row justify-center items-center gap-12 p-8 md:p-16 border-2 border-[#00ffff]/30 relative overflow-hidden"
       >
-        <h2 class="text-[3rem] font-bold mb-4 text-marine-teal">Proyecto 3</h2>
-        <p class="text-[1.6rem] text-gray-300">
-          Descripción del tercer proyecto
-        </p>
+        <!-- Decoraciones de luz en el fondo -->
+        <div
+          class="absolute top-0 right-0 w-64 h-64 bg-[#00ffff]/10 rounded-full blur-[80px] pointer-events-none"
+        >
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-64 h-64 bg-[#00ced1]/10 rounded-full blur-[80px] pointer-events-none"
+        >
+        </div>
+
+        <!-- Columna de Texto -->
+        <div
+          class="z-10 text-center xl:text-left flex-1 flex flex-col items-center xl:items-start max-w-4xl"
+        >
+          <div
+            class="inline-block bg-[#00ffff]/10 text-[#00ffff] px-4 py-1.5 rounded-full font-bold mb-6 text-sm border border-[#00ffff]/20 backdrop-blur-sm uppercase tracking-wider"
+          >
+            Hackathon Generation
+          </div>
+          <h2
+            class="text-[3.5rem] md:text-[4.5rem] font-bold mb-6 text-white drop-shadow-md leading-tight"
+          >
+            Landing Page <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-[#00ced1] to-[#F54927]"
+              >Básquetbol</span
+            >
+          </h2>
+          <p
+            class="text-[1.8rem] text-gray-300 mb-10 leading-relaxed max-w-[70ch]"
+          >
+            Una landing page dinámica desarrollada para un Hackathon. Diseñada
+            para apasionados del básquetbol, ofrece una experiencia de usuario
+            fluida, interfaces responsivas y un diseño moderno que atrapa la
+            esencia del deporte.
+          </p>
+
+          <!-- Stack Tecnológico -->
+          <div
+            class="flex flex-wrap justify-center xl:justify-start gap-4 mb-12"
+          >
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                class="w-6 h-6"
+                alt="HTML5"
+              />
+              HTML5
+            </span>
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                class="w-6 h-6"
+                alt="CSS3"
+              />
+              CSS3
+            </span>
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                class="w-6 h-6"
+                alt="JavaScript"
+              />
+              JavaScript
+            </span>
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+                class="w-6 h-6"
+                alt="Bootstrap"
+              />
+              Bootstrap
+            </span>
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                class="w-6 h-6"
+                alt="GitHub"
+                style="filter: invert(1)"
+              />
+              GitHub
+            </span>
+          </div>
+
+          <!-- Botones Enlace -->
+          <div class="flex flex-wrap justify-center xl:justify-start gap-6">
+            <a
+              href="https://landinbasquetbol.netlify.app"
+              target="_blank"
+              class="group inline-flex items-center gap-3 bg-gradient-to-r from-[#001d3d] to-[#00ced1] text-white px-8 py-4 rounded-full font-bold text-[1.6rem] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(0,206,209,0.5)] border border-[#00ffff]/30"
+            >
+              Demo del Proyecto
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                ><path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path><polyline points="15 3 21 3 21 9"></polyline><line
+                  x1="10"
+                  y1="14"
+                  x2="21"
+                  y2="3"></line></svg
+              >
+            </a>
+
+            <a
+              href="https://github.com/ericperucho12-netizen/landing_basquetbol.git"
+              target="_blank"
+              class="group inline-flex items-center gap-3 bg-[#03050c] text-white px-8 py-4 rounded-full font-bold text-[1.6rem] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] border border-white/20"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                class="w-8 h-8"
+                alt="GitHub"
+                style="filter: invert(1)"
+              />
+              Código Fuente
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna de Imagen -->
+        <div
+          class="z-10 flex-1 w-full max-w-3xl xl:max-w-none group mt-8 xl:mt-0"
+        >
+          <div
+            class="relative rounded-2xl overflow-hidden border-2 border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-105 group-hover:shadow-[0_20px_50px_rgba(0,255,255,0.2)]"
+          >
+            <div
+              class="absolute inset-0 bg-[#00ffff]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay z-10"
+            >
+            </div>
+            <img
+              src={imgBasquet.src}
+              alt="Landing Basquetbol"
+              class="w-full h-auto object-cover relative z-0"
+            />
+          </div>
+        </div>
       </ScrollStackItem>
+
+      <!-- Proyecto 4 -->
       <ScrollStackItem
-        itemClassName="bg-[#03050c] text-white flex flex-col justify-center items-center border-2 border-marine-teal/50"
+        itemClassName="bg-[#03050c]/95 text-white flex flex-col xl:flex-row justify-center items-center gap-12 p-8 md:p-16 border-2 border-[#0077b6]/30 relative overflow-hidden"
       >
-        <h2 class="text-[3rem] font-bold mb-4 text-marine-teal">Proyecto 4</h2>
+        <!-- Decoraciones de luz en el fondo -->
+        <div
+          class="absolute top-0 right-0 w-64 h-64 bg-[#00ffff]/10 rounded-full blur-[80px] pointer-events-none"
+        >
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-64 h-64 bg-[#00ced1]/10 rounded-full blur-[80px] pointer-events-none"
+        >
+        </div>
+
+        <!-- Columna de Texto -->
+        <div
+          class="z-10 text-center xl:text-left flex-1 flex flex-col items-center xl:items-start max-w-4xl"
+        >
+          <div
+            class="inline-block bg-[#00ffff]/10 text-[#00ffff] px-4 py-1.5 rounded-full font-bold mb-6 text-sm border border-[#00ffff]/20 backdrop-blur-sm uppercase tracking-wider"
+          >
+            ULA Universidad Latinoamericana
+          </div>
+          <h2
+            class="text-[3.3rem] md:text-[4.2rem] font-bold mb-6 text-white drop-shadow-md leading-tight"
+          >
+            Inventario <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-[#00ced1] to-[#05DF72]"
+              >ULA</span
+            >
+          </h2>
+          <p
+            class="text-[1.5rem] text-gray-300 mb-10 leading-relaxed max-w-[70ch]"
+          >
+            Este proyecto consiste en un sistema de control de inventario para
+            los equipos de laboratorio de la Universidad Latinoamericana y de
+            esta manera se pueda tener un mejor control de los equipos de
+            laboratorio y de esta manera facilitar el trabajo de los docentes y
+            alumnos.
+          </p>
+
+          <!-- Stack Tecnológico -->
+          <div
+            class="flex flex-wrap justify-center xl:justify-start gap-4 mb-12"
+          >
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                class="w-6 h-6"
+                alt="HTML5"
+              />
+              HTML5
+            </span>
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                class="w-6 h-6"
+                alt="CSS3"
+              />
+              CSS3
+            </span>
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+                class="w-6 h-6"
+                alt="Java"
+              />
+              Java
+            </span>
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                class="w-6 h-6"
+                alt="JavaScript"
+              />
+              JavaScript
+            </span>
+
+            <span
+              class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[1.4rem] font-semibold text-[#e0f7fa]"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+                class="w-6 h-6"
+                alt="PostgreSQL"
+              />
+              PostgreSQL
+            </span>
+          </div>
+
+          <!-- Botones Enlace -->
+          <div class="flex flex-wrap justify-center xl:justify-start gap-6">
+            <a
+              href={imgPrivad.src}
+              target="_blank"
+              class="group inline-flex items-center gap-3 bg-gradient-to-r from-[#001d3d] to-[#00ced1] text-white px-8 py-4 rounded-full font-bold text-[1.6rem] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(0,206,209,0.5)] border border-[#00ffff]/30"
+            >
+              Ver página web
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                ><path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path><polyline points="15 3 21 3 21 9"></polyline><line
+                  x1="10"
+                  y1="14"
+                  x2="21"
+                  y2="3"></line></svg
+              >
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna de Imagen -->
+        <div
+          class="z-10 flex-1 w-full max-w-3xl xl:max-w-none group mt-8 xl:mt-0"
+        >
+          <div
+            class="relative rounded-2xl overflow-hidden border-2 border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-105 group-hover:shadow-[0_20px_50px_rgba(0,255,255,0.2)]"
+          >
+            <div
+              class="absolute inset-0 bg-[#00ffff]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay z-10"
+            >
+            </div>
+            <img
+              src={imgULA.src}
+              alt="Portal Web Renagas"
+              class="w-full h-auto object-cover relative z-0"
+            />
+          </div>
+        </div>
+      </ScrollStackItem>
+
+      <!-- Proyecto 5 -->
+      <ScrollStackItem
+        itemClassName="bg-[#0a0f1a] text-white flex flex-col justify-center items-center border-2 border-marine-teal/50"
+      >
+        <h2 class="text-[3rem] font-bold mb-4 text-marine-teal">Proyecto 5</h2>
         <p class="text-[1.6rem] text-gray-300">
           Descripción del tercer proyecto
         </p>
