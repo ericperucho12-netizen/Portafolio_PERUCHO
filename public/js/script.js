@@ -165,6 +165,11 @@ const translations = {
         "portfolio.coming_soon_small": "TENEMOS ALGO NUEVO",
         "portfolio.coming_soon_big": "PRÓXI<br>MAMENTE",
         "contact.title": "Contacto",
+        "contact.subtitle": "¿Tienes una idea en mente?",
+        "contact.description": "Envíame un mensaje rápido y construyamos juntos algo asombroso desde las profundidades de la web.",
+        "contact.name_placeholder": "Nombre",
+        "contact.email_placeholder": "Email",
+        "contact.message_placeholder": "Mensaje",
         "contact.name": "Nombre",
         "contact.email": "Email",
         "contact.message": "Mensaje",
@@ -199,6 +204,11 @@ const translations = {
         "portfolio.coming_soon_small": "WE GOT SOMETHING NEW",
         "portfolio.coming_soon_big": "COMING<br>SOON",
         "contact.title": "Contact",
+        "contact.subtitle": "Do you have an idea in mind?",
+        "contact.description": "Send me a quick message and let's build something amazing together from the depths of the web.",
+        "contact.name_placeholder": "Name",
+        "contact.email_placeholder": "Email",
+        "contact.message_placeholder": "Message",
         "contact.name": "Name",
         "contact.email": "Email",
         "contact.message": "Message",
@@ -214,8 +224,12 @@ function updateLanguage(lang) {
     elements.forEach(element => {
         const key = element.getAttribute('data-key');
         if (translations[lang] && translations[lang][key]) {
+            // Si es un input o textarea con placeholder
+            if ((element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') && element.hasAttribute('placeholder')) {
+                element.placeholder = translations[lang][key];
+            }
             // Si el elemento contiene HTML (como el BR en Coming Soon), usar innerHTML
-            if (element.tagName === 'H1' || element.tagName === 'P' || element.tagName === 'SPAN') {
+            else if (element.tagName === 'H1' || element.tagName === 'P' || element.tagName === 'SPAN') {
                 element.innerHTML = translations[lang][key];
             } else {
                 element.textContent = translations[lang][key];

@@ -2,7 +2,6 @@
 // @ts-nocheck
 import buceando from '../../assets/buceando (1).png';
 import pezAvizal from '../../assets/pezAvizal.png';
-import CurvedInput from '../ui/CurvedInput.jsx';
 ---
 <section id="contact" class="w-full mx-auto mt-16 px-4 md:px-8 pt-16 pb-8 relative z-10 overflow-visible">
     <div class="text-center mb-20 relative w-full">
@@ -13,20 +12,49 @@ import CurvedInput from '../ui/CurvedInput.jsx';
     <div class="scroll-reveal w-[95%] max-w-[55rem] mx-auto relative z-10 mt-10 flex flex-col items-center">
         <div class="w-full bg-[#03050c]/60 p-12 md:p-16 rounded-[2.5rem] backdrop-blur-xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.7)] flex flex-col items-center justify-center text-center">
             
-            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-md">¿Tienes una idea en mente?</h3>
-            <p class="text-gray-300 text-lg md:text-xl mb-12 max-w-[45ch]">Envíame un mensaje rápido y construyamos juntos algo asombroso desde las profundidades de la web.</p>
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-md" data-key="contact.subtitle">Do you have an idea in mind?</h3>
+            <p class="text-gray-300 text-lg md:text-xl mb-12 max-w-[45ch]" data-key="contact.description">Send me a quick message and let's build something amazing together from the depths of the web.</p>
 
             <div class="w-full max-w-[45rem]">
-                <CurvedInput 
-                    client:load 
-                    bend={25} 
-                    height={65} 
-                    placeholder="ejemplo@correo.com" 
-                    buttonText="Enviar" 
-                    theme="dark"
-                    buttonColor="#00ced1"
-                    iconColor="#00ced1"
-                />
+                <form id="formulario-contacto" class="flex flex-col gap-6">
+                    <input 
+                        type="text" 
+                        id="fullName" 
+                        name="fullName" 
+                        placeholder="Name" 
+                        required 
+                        class="w-full bg-[#03050c]/80 border border-white/20 rounded-xl px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-[#00ced1] focus:ring-1 focus:ring-[#00ced1] transition-all text-lg"
+                        data-key="contact.name_placeholder"
+                    />
+                    
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Email" 
+                        required 
+                        class="w-full bg-[#03050c]/80 border border-white/20 rounded-xl px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-[#00ced1] focus:ring-1 focus:ring-[#00ced1] transition-all text-lg"
+                        data-key="contact.email_placeholder"
+                    />
+                    
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        placeholder="Message" 
+                        required 
+                        rows="4"
+                        class="w-full bg-[#03050c]/80 border border-white/20 rounded-xl px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-[#00ced1] focus:ring-1 focus:ring-[#00ced1] transition-all text-lg resize-none"
+                        data-key="contact.message_placeholder"
+                    ></textarea>
+                    
+                    <button 
+                        type="submit" 
+                        class="w-full bg-[#00ced1] text-[#03050c] font-bold text-lg py-4 rounded-xl hover:bg-white transition-all shadow-[0_0_15px_rgba(0,206,209,0.4)] hover:shadow-[0_0_20px_rgba(255,255,255,0.6)]"
+                        data-key="contact.send"
+                    >
+                        Send Message
+                    </button>
+                </form>
             </div>
         </div>
     </div>
