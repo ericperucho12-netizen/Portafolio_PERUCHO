@@ -35,37 +35,34 @@ async function cargarProyectos() {
 // Ejecutamos la función al cargar la página
 // cargarProyectos();
 
-// --- LÓGICA DEL FORMULARIO DE CONTACTO ---
-const formulario = document.getElementById('formulario-contacto');
+// --- LÓGICA DE COPIAR EMAIL ---
+function copyEmail() {
+    const email = 'ericperucho12@gmail.com';
+    navigator.clipboard.writeText(email).then(() => {
+        // Mostrar ícono de check
+        const iconCopy = document.getElementById('icon-copy');
+        const iconCheck = document.getElementById('icon-check');
+        const feedback = document.getElementById('copy-feedback');
+        
+        if (iconCopy) iconCopy.classList.add('hidden');
+        if (iconCheck) iconCheck.classList.remove('hidden');
+        if (feedback) feedback.style.opacity = '1';
 
-if (formulario) {
-    formulario.addEventListener('submit', async (e) => {
-        e.preventDefault(); // Evita que la página se recargue
-
-        // Capturamos los datos
-        const datosFormulario = {
-            fullName: document.getElementById('fullName').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value
-        };
-
-        try {
-            const respuesta = await fetch(CONTACTO_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(datosFormulario)
-            });
-
-            if (respuesta.ok) {
-                alert("¡Mensaje enviado con éxito!");
-                formulario.reset(); // Limpia el formulario
-            } else {
-                alert("Hubo un error al enviar el mensaje.");
-            }
-        } catch (error) {
-            console.error("Error:", error);
-            alert("Error de conexión con el servidor.");
-        }
+        // Restaurar después de 2.5 segundos
+        setTimeout(() => {
+            if (iconCopy) iconCopy.classList.remove('hidden');
+            if (iconCheck) iconCheck.classList.add('hidden');
+            if (feedback) feedback.style.opacity = '0';
+        }, 2500);
+    }).catch(() => {
+        // Fallback para navegadores sin Clipboard API
+        const el = document.createElement('textarea');
+        el.value = email;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        alert('Email copied: ' + email);
     });
 }
 
@@ -174,6 +171,7 @@ const translations = {
         "contact.email": "Email",
         "contact.message": "Mensaje",
         "contact.send": "Enviar Mensaje",
+        "contact.copied": "✓ ¡Correo copiado al portapapeles!",
         "blog.tiktok_title": "Mi TikTok",
         "blog.desc": "Comparto mi viaje, conocimiento y curiosidades sobre programación y desarrollo. ¡Sígueme en mi canal oficial!",
         "blog.visit": "¡Visitar Perfil!",
@@ -249,6 +247,7 @@ const translations = {
         "contact.email": "Email",
         "contact.message": "Message",
         "contact.send": "Send Message",
+        "contact.copied": "✓ Email copied to clipboard!",
         "blog.tiktok_title": "My TikTok",
         "blog.desc": "I share my journey, knowledge, and curiosities about programming and development. Follow me on my official channel!",
         "blog.visit": "Visit Profile!",
