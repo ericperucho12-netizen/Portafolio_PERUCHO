@@ -13,11 +13,11 @@ import FallingText from "../ui/FallingText.jsx";
     playsinline
     class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-90"
   >
-    <source src="/VideoMar.mov" type="video/mp4" />
+    <source src={import.meta.env.BASE_URL + "VideoMar.mov"} type="video/mp4" />
   </video>
 
   <!-- ═══ SPLASH SOUND EFFECT ═══ -->
-  <audio id="splash-sound" src="/audio/splash.mp3" preload="auto"></audio>
+  <audio id="splash-sound" src={import.meta.env.BASE_URL + "audio/splash.mp3"} preload="auto"></audio>
 
   <!-- ═══ CONTROLS (Audio & Lang) ═══ -->
   <div class="absolute top-6 right-6 sm:top-8 sm:right-8 z-[40] flex items-center gap-3">
